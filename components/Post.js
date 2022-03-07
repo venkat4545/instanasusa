@@ -85,7 +85,7 @@ onSnapshot(
                             <HeartIcon onClick={likepost} className='btn ' />
                         )
                     }
-                
+                    
                 <ChatIcon  className='btn'/>
                 <PaperAirplaneIcon className='btn rotate-90'/>
             </div>
