@@ -1,17 +1,17 @@
-import { Session } from "inspector"
+
 import NextAuth from "next-auth"
-import googleProvider from "next-auth/providers/google"
+import GoogleProvider from "next-auth/providers/google"
 
 export default NextAuth({
   // Configure one or more authentication providers
   providers: [
-    googleProvider({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     // ...add more providers here
   ],
-  secret: process.env.GOOGLE_CLIENT_SECRET,
+  secret: process.env.NEXTAUTH_URL,
   pages:{
     signIn:"/auth/signin",
   },
@@ -23,11 +23,6 @@ export default NextAuth({
 
       session.user.uid=token.sub;
       return session;
-    }
-  }
- // theme:{
-   // logo:"https:/links.papareact.com/sq0",
-    //brandColor: "#F13287",
-    //colorScheme: "auto",
-  //},
-})
+    },
+  },
+});
