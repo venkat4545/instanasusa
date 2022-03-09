@@ -8,12 +8,13 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      
+      NEXTAUTH_SECRET: process.env.NEXTAUTH_URL,
       
     }),
     // ...add more providers here
     
   ],
+  
   
   pages:{
     signIn:"/auth/signin",
